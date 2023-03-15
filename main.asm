@@ -8,7 +8,7 @@
 	fileName: 	.space 1024
 	data:		.word 0:10000
 	buildTree:	.word 0x80000000:100000
-	choice:		.space 100
+	choice:		.space 120
 .text
 	
 .globl main
@@ -16,14 +16,14 @@ main:
    	printf("\n_______________________________________________________________________________\n")
     	printf("1. Nhap du lieu tu file\n")
     	printf("2. Nhap du lieu tu ban phim\n")
-    	printf("3. Gan gia tri phan tu thu i trong mang thanh val(tuc la a[i] = val)\n")
+    	printf("3. Gan gia tri phan tu thu i trong mang thanh val(tuc la a[i] := val)\n")
     	printf("4. Tim gia tri phan tu lon nhat trong doan [l,r]\n")
     	printf("5. In ra so nguyen n va mang so nguyen\n")
     	printf("6. Thoat\n")
     	printf("Lua chon: ")
     	li $v0, 8
     	la $a0, choice
-    	li $a1, 10
+    	li $a1, 100
     	syscall
     	# Switch - case
     	lb $v0, choice($0)
