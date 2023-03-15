@@ -217,7 +217,7 @@
                 move $a0, $s0
                 syscall
                 
-                
+                sw $0, %data($0)
                 getline(%data, $a1)
                 getline(%data, $a1)
                 
@@ -333,6 +333,8 @@
 		nhapSoNguyenN:		.asciiz "Nhap so nguyen duong n: "
 		nhapMangNSoNguyen:	.asciiz "Nhap mang n so nguyen: "
 	.text
+		sw $0, %data($0)
+	
 		addi $sp, $sp, -12
 		sw $v0, 0($sp)
 		sw $a0, 4($sp)

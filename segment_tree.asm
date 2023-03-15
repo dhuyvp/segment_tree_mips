@@ -116,6 +116,7 @@
 			sw $v0, 0($sp)
 			sw $a0, 4($sp)
 			
+			printf("Gia tri phan tu lon nhat trong doan [l, r]: ")
 			move $a0, $s0
 			li $v0, 1
 			syscall
@@ -249,6 +250,6 @@
      		
      
      	exitloop2:
-     	
+     		printf("Thay doi gia tri thanh cong!\n")
      	
 .end_macro
