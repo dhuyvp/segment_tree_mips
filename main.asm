@@ -57,6 +57,7 @@ case1:
 	printf("So nguyen n va mang so nguyen la: ")
 	printf_fullarray(data)
 	
+	li $s6, 1
 	build(data, buildTree)
     	j main
 
@@ -67,10 +68,13 @@ case2:
 	printf("So nguyen n va mang so nguyen la: ")
 	printf_fullarray(data)
 	
+	li $s6, 1
 	build(data, buildTree)
     	j main
 
 case3:
+	bne $s6, 1, caseInputData
+	
 	readIndexAndValue($s1, $s2)
 	
 	checkIndex($s1, data, main)
@@ -81,6 +85,8 @@ case3:
     	j main
 
 case4:
+	bne $s6, 1, caseInputData
+	
 	#printf_fullarray(data)
 	readLeftRight($s1, $s2)
 	
@@ -100,3 +106,7 @@ case6:
 caseError:
 	printf("Vui long dua ra lua chon phu hop\n")
      j main
+     
+caseInputData:
+	printf("Vui long nhap du lieu so nguyen n va mang so nguyen!\n")
+	j main

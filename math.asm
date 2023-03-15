@@ -7,6 +7,7 @@
 #########################
 .macro checkData(%data, %main)
 	.text 
+		li $s6, 0 #khoi tao nhap du lieu loi
 		li $t5, 0
 		lw $t6, %data($t5)
 		addi $t5, $t5, 4
@@ -24,6 +25,7 @@
 			printf("Nhap chua du mang so nguyen hoac nhap thua mang so nguyen\n")
 			j %main	
 		exit:
+			li $s6, 1 #Kiem tra du lieu dung
 .end_macro
 
 ##########################
